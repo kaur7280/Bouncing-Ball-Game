@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<!--
+Example Animation
+Sam Scott, February 2014
+-->
+<html>
+    <head>
+        <title>Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type='text/javascript'>
+            // Following best practices, it's all inside a window load event
+            window.addEventListener("load", function (event) {
+                // global variables (global to this function, that is)
+                // to control the animation
+                var radius = 20;
+                var x = 0, y = 200; 
+var x1 = 0, y1 = 400;	
+var x2 = 0, y2 = 600;
+var x3 = 0, y3 = 0;
+var x4 = 0,y4=100;
+var x5 = 0,y5=200;
+var x6 = 0,y6=300;
+var x7 = 0,y7 = 500;
+var x8 = 0,y8 = 700;
+
+var xinc=3;
+var x1inc=4;
+var x2inc=5;
+var x3inc=5.5;
+var x4inc=3.5;
+var x5inc=4.5;
+var x6inc=6;
+var x7inc=2.5;
+var x8inc=5.5;
+
+		// location
+                var timerId; 
+var timerID1,timerID2,timerID3,timerID5,timerID4,timerID6,timerID7,timerID8;				// holds the id of the timer
+
+
+
+
+					function color(){
+					
+					document.getElementById("movingBall").style.backgroundColor = "red";
+					document.getElementById("movingBall1").style.backgroundColor = "red";
+					document.getElementById("movingBall2").style.backgroundColor = "red";
+					document.getElementById("movingBall3").style.backgroundColor = "red";
+					document.getElementById("movingBall4").style.backgroundColor = "red";
+					document.getElementById("movingBall5").style.backgroundColor = "red";
+					document.getElementById("movingBall6").style.backgroundColor = "red";
+					document.getElementById("movingBall7").style.backgroundColor = "red";
+					document.getElementById("movingBall8").style.backgroundColor = "red";
+					
+					
+					if(document.getElementById("movingBall").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall1").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall2").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall3").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall4").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall5").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall5").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall6").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall7").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else if(document.getElementById("movingBall8").style.backgroundColor="red"){
+					
+					alert("GAME OVER!! | You WON!! "+
+				           "click OK - to see the change in colors of balls ");
+					}
+					else 
+					alert("GAME OVER!! | You LOOSE!!!");
+					
+                          
+					}
+					
+					
+					
+                // starts the animation
+                function startAnimation() {
+                    // 16  milliseconds works out to 62.5 frames per second.
+                    // for games, 60 frames per second is standard
+                    timerId = setInterval(updateAnimation, 1);
+					
+                }
+				function startAnimation1(){
+				  timerID1 = setInterval(updateAnimation1,1);
+				}
+                   function startAnimation2(){
+				    timerID2 = setInterval(updateAnimation2,1);
+				   
+				   }
+				   function startAnimation3(){
+				    timerID3 = setInterval(updateAnimation3,1);
+				   
+				   }
+				   function startAnimation4(){
+				    timerID4 = setInterval(updateAnimation4,1);
+				   
+				   }
+				   function startAnimation5(){
+				    timerID5 = setInterval(updateAnimation5,1);
+				   
+				   }
+				   function startAnimation6(){
+				    timerID6 = setInterval(updateAnimation6,1);
+				   
+				   }
+				   function startAnimation7(){
+				    timerID7 = setInterval(updateAnimation7,1);
+				   
+				   }
+				   function startAnimation8(){
+				    timerID8 = setInterval(updateAnimation8,1);
+				   
+				   }
+                // stops the animation
+                function stopAnimation() {
+                    
+					clearTimeout(timerId);
+					stopAnimation1();
+					stopAnimation2();
+					stopAnimation3();
+					stopAnimation4();
+					stopAnimation5();
+					stopAnimation6();
+					stopAnimation7();
+					stopAnimation8();
+					alert("GAME OVER!!");
+					
+					
+					
+                }
+function stopAnimation1(){
+clearTimeout(timerID1);
+}
+function stopAnimation2(){
+clearTimeout(timerID2);
+}
+
+function stopAnimation3(){
+clearTimeout(timerID3);
+}
+function stopAnimation4(){
+clearTimeout(timerID4);
+}
+function stopAnimation5(){
+clearTimeout(timerID5);
+}
+function stopAnimation6(){
+clearTimeout(timerID6);
+}
+function stopAnimation7(){
+clearTimeout(timerID7);
+}
+function stopAnimation8(){
+clearTimeout(timerID8);
+}
+  
+                // This function is called every 16 milliseconds
+                function updateAnimation() {
+                    x = x + xinc;
+
+                    // 2. Change some CSS properties
+                    var e = document.getElementById("movingBall");
+                    e.style.left=x+"px";
+                    e.style.top=y+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x > window.innerWidth - radius*2 || x<0)
+                         xinc *=-1;
+						//stopAnimation();
+                }
+				 function updateAnimation1() {
+                    x1 = x1 + x1inc;
+                    
+                    // 2. Change some CSS properties
+                    var b = document.getElementById("movingBall1");
+                    b.style.left=x1+"px";
+                    b.style.top=y1+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x1 > window.innerWidth - radius*2 || x1<0)
+                        x1inc *=-1;
+						//stopAnimation();
+                }
+				function updateAnimation2() {
+                    x2 = x2 + x2inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall2");
+                    g.style.left=x2+"px";
+                    g.style.top=y2+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x2 > window.innerWidth - radius*2 || x2<0)
+                        x2inc *=-1;
+						//stopAnimation();
+                }
+				
+                function updateAnimation3() {
+                    x3 = x3 + x3inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall3");
+                    g.style.left=x3+"px";
+                    g.style.top=y3+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x3 > window.innerWidth - radius*2 || x3<0)
+                        x3inc *=-1;
+						//stopAnimation();
+                }
+				
+                function updateAnimation4() {
+                    x4 = x4 + x4inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall4");
+                    g.style.left=x4+"px";
+                    g.style.top=y4+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x4 > window.innerWidth - radius*2 || x4<0)
+                        x4inc *=-1;
+						//stopAnimation();
+                }
+				function updateAnimation5() {
+                    x5 = x5 + x5inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall5");
+                    g.style.left=x5+"px";
+                    g.style.top=y5+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x5 > window.innerWidth - radius*2 || x5<0)
+                        x5inc *=-1;
+						//stopAnimation();
+                }
+				function updateAnimation6() {
+                    x6 = x6 + x6inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall6");
+                    g.style.left=x6+"px";
+                    g.style.top=y6+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x6 > window.innerWidth - radius*2 || x6<0)
+                        x6inc *=-1;
+						//stopAnimation();
+                }
+				function updateAnimation7() {
+                    x7 = x7 + x7inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall7");
+                    g.style.left=x7+"px";
+                    g.style.top=y7+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x7 > window.innerWidth - radius*2 || x7<0)
+                        x7inc *=-1;
+						//stopAnimation();
+                }
+				function updateAnimation8() {
+                    x8 = x8 + x8inc;
+                    
+                    // 2. Change some CSS properties
+                    var g = document.getElementById("movingBall8");
+                    g.style.left=x8+"px";
+                    g.style.top=y8+"px";
+
+                    // stop the animation if the ball is at the edge of the screen
+                    // window.innerWidth is the current width of the browser
+                    if (x8 > window.innerWidth - radius*2 || x8<0)
+                        x8inc *=-1;
+						//stopAnimation();
+                }
+				
+				
+                // Start things up!
+				
+                startAnimation();
+				startAnimation1();
+				startAnimation2();
+				startAnimation3();
+				startAnimation4();
+				startAnimation5();
+				startAnimation6();
+				startAnimation7();
+				startAnimation8();
+				
+				setTimeout(stopAnimation,30000);
+				
+				document.getElementById("movingBall").onclick=color;
+				
+				document.getElementById("movingBall1").onclick=color;
+				document.getElementById("movingBall2").onclick=color;
+				document.getElementById("movingBall3").onclick=color;
+				document.getElementById("movingBall4").onclick=color;
+				document.getElementById("movingBall5").onclick=color;
+				document.getElementById("movingBall6").onclick=color;
+				document.getElementById("movingBall7").onclick=color;
+				document.getElementById("movingBall8").onclick=color;
+				document.getElementById("stop").onclick=
+				
+				stopAnimation;
+				
+            });
+        </script>
+        <style>
+            #movingBall {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:orange;
+                top:200px;
+                left:0px;
+            }
+			#movingBall1 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:blue;
+                top:400px;
+                left:0px;
+            }
+			#movingBall2 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:green;
+                top:600px;
+                left:0px;
+            }
+			#movingBall3 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:yellow;
+                top:0px;
+                left:0px;
+            }
+			#movingBall4 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:#27e650;
+                top:100px;
+                left:0px;
+            }
+			#movingBall5 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:#9327e6;
+                top:200px;
+                left:0px;
+            }
+			#movingBall6 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:#dd68e3;
+                top:300px;
+                left:0px;
+            }
+			#movingBall7 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:#5ef2eb;
+                top:500px;
+                left:0px;
+            }
+			#movingBall8 {
+                position: absolute;
+                width:40px;
+                height:40px;
+                border-radius:200px;
+                background-color:#c3eb34;
+                top:700px;
+                left:0px;
+            }
+			h1{
+			
+			position:absolute;
+			 top:300px;
+                left:600px;
+			
+			
+			
+			}
+			#h{
+			position:absolute;
+			 top:400px;
+             left:675px;
+			
+			
+			
+			}
+			
+        </style>
+    </head>
+    <body style='text-align:center;color:white;background-color:black;'>
+        <div id="movingBall"></div>
+		<div id = "movingBall1"></div>
+		<div id = "movingBall2"></div>
+		<div id = "movingBall3"></div>
+		<h1>Catch Balls to change color!!</h1>
+		<div id = "movingBall4"></div>
+		<div id = "movingBall5"></div>
+		<div id = "movingBall6"></div>
+		<div id = "movingBall7"></div>
+		<div id = "movingBall8"></div>
+<div id = "h">
+	To Stop the game press STOP!!<button id = "stop">stop</button>
+</div>
+	  
+		
+    </body>
+</html>
